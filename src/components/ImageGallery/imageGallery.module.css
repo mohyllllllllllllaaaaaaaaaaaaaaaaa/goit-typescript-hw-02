@@ -1,0 +1,38 @@
+.list {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 20px; 
+    padding-bottom: 30px; 
+   }
+   
+   .container{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+     padding-bottom: 30px;
+   }
+   .item {
+   
+   object-position: center;
+   flex: 0 1 calc(25% - 35px); 
+   margin-bottom: 15px
+   }
+   .scroll-animation {
+     animation: scrollToNewImages 0.5s ease-out;
+   }
+   .item img{
+     width: 340px;
+     height: 200px;
+   }
+   @keyframes scrollToNewImages {
+     0% {
+       transform: translateY(0);
+     }
+     100% {
+       transform: translateY(50vh); 
+     }
+   }
+   
