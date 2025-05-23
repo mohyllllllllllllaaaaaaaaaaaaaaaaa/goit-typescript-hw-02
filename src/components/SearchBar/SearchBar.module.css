@@ -7,11 +7,11 @@
   .input {
     width: 360px;
     padding: 16px;
-    background-color: #fafafa;
+    background-color: #b9eaeb;
     padding-right: 40px;
     font-weight: 300;
     letter-spacing: 0.03em;
-    
+    border-radius: 8px;
   }
   
   .button {
@@ -27,7 +27,7 @@
   }
   .header{
     width: 100vw; 
-    background-color: blue;
+    background-color: rgb(106, 210, 221);
     padding: 20px 0;
     display: flex;
     justify-content: center;

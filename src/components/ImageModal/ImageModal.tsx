@@ -1,5 +1,11 @@
 import Modal from 'react-modal';
 
+export interface ImageModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  src: string;
+  alt: string;
+}
 const customStyles = {
     content: {
       top: '50%',
@@ -13,8 +19,8 @@ const customStyles = {
       background: "rgba(0,0,0,0.6)"
     }
   };
-  Modal.setAppElement('#root');
-  export const ImageModal =({ isOpen, onClose, src, alt}) => {
+ 
+  export const ImageModal =({ isOpen, onClose, src, alt}: ImageModalProps) => {
     return (
         <Modal
         isOpen={isOpen}

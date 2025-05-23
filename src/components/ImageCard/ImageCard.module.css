@@ -2,10 +2,13 @@
   width: 320px;
   height: 200px;
 object-position: center;
+border-radius: 8px;
+box-shadow: -5px 5px  20px rgba(7, 87, 90, 0.833);
 }
 img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 8px;
 }
   

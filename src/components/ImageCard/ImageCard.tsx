@@ -1,6 +1,12 @@
 import css from "./ImageCard.module.css";
 
- const ImageCard = ({ src, alt, large, onClick }) => {
+export interface ImagesCardInterface {
+  src: string;
+  alt: string;
+  large: string;
+  onClick: (image: {src: string; alt: string}) => void;
+}
+ const ImageCard = ({ src, alt, large, onClick }: ImagesCardInterface) => {
   const handleClick = () => {
     onClick({ src: large, alt });
   };

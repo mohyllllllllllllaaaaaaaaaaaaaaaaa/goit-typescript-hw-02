@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 import css from "./SearchBar.module.css";
 import { CiSearch } from "react-icons/ci";
 
-export const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState("");
+interface SearchBarProps {
+  onSubmit: (query: string) => void;
+}
+export const SearchBar = ({ onSubmit }: SearchBarProps) => {
+  const [query, setQuery] = useState<string>("");
 
-  const handleChange = (e) => setQuery(e.target.value);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setQuery(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const trimmedQuery = query.trim();
 
@@ -19,7 +22,7 @@ export const SearchBar = ({ onSubmit }) => {
 
     onSubmit(trimmedQuery);
     setQuery("");
-  };
+     };
 
   return (
     <div className="div">
@@ -42,4 +45,4 @@ export const SearchBar = ({ onSubmit }) => {
     </div>
   );
 };
-export default SearchBar;
+export default SearchBar; 

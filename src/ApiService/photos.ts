@@ -3,8 +3,21 @@ import axios from 'axios';
 const API_KEY = 'bpA9fAlIYjJ0wt1NKBcIv8MZGc98l3Z3aEyyo9WXAsQ';
 const BASE_URL = 'https://api.unsplash.com/search/photos';
 
-export const getPhotos = async (query, page = 1, ) => {
-  const { data } = await axios.get(BASE_URL, {
+export interface UnsplashPhoto {
+  id: string;
+  urls: {
+    small: string;
+    regular: string;
+  };
+  alt_description: string;
+}
+export interface UnsplashResponse {
+  total: number;
+  total_pages: number;
+   results: UnsplashPhoto[];
+}
+export const getPhotos= async (query: string, page: number = 1, ): Promise<UnsplashResponse> => {
+  const { data } = await axios.get<UnsplashResponse>(BASE_URL, {
     params: {
       query,
       page,
