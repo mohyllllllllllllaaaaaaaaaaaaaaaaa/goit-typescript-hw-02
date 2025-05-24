@@ -25,7 +25,7 @@ export const SearchBar = ({ onSubmit }: SearchBarProps) => {
      };
 
   return (
-    <div className="div">
+    <div>
     <header className={css.header}>
       <form onSubmit={handleSubmit} className={css.form}>
         <input

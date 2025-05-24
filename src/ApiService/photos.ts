@@ -11,7 +11,7 @@ export interface UnsplashPhoto {
  };
   alt_description: string;
 }
-export interface UnsplashResponse {
+ interface UnsplashResponse {
   total: number;
   total_pages: number;
   results: UnsplashPhoto[];
